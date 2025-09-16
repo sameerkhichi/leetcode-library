@@ -6,29 +6,17 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        ans = [] 
-        counter_1 = 0
-        
+        dictionary = {}
 
-        for first_number in nums:
+        #enumerate gives index and value
+        #is is the index
+        #num is the value at index i
+        for i, num in enumerate(nums):
+            
+            remainder = target - num
 
-            counter_2 = 0
+            if remainder in dictionary:
+                return [dictionary[remainder], i]
 
-            for second_number in nums:
-                
-                if counter_1 != counter_2:
-
-                    if first_number + second_number == target:
-
-                        ans.append(counter_1)
-                        ans.append(counter_2)
-                        break
-
-                counter_2 += 1
-
-            if ans:
-                break
-                
-            counter_1 += 1
-
-        return ans
+            dictionary[num] = i
+            
