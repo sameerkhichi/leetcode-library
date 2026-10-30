@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update Leetcode cookies
-        uses: vishrutkmr7/UpdateLCCookies@5f0936ae34e062eb1bf3158fdf81831efef24220 #locking to a specific known safe version for security
+        uses: vishrutkmr7/UpdateLCCookies@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           leetcode-email: ${{ secrets.LEETCODE_EMAIL }}
